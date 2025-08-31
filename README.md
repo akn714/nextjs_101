@@ -19,4 +19,25 @@ Putting my stuff while learning NextJS
 - Subscribe to real-time updates via sockets/WS in browser
 - Manage UI state & client-side routing transitions
 - Compose only Client components (cannot directly include Server components)
+- Client Components can never be async
 
+**Note**: If you use a normal component in the client component then by default that componenet will become client component (without specifying 'use client' on top)
+
+```js
+// normal component
+export function Counter() {
+	const [count, setCound] = useState();
+	return (
+		<button>click<button>
+	)
+}
+
+// client component
+"use client";
+import { Counter } from './Coutner'
+export defualt function comp() {
+	return (
+		<Counter /> // this automatically becomes client component, 'coz called in side a client component
+	)
+}
+```
