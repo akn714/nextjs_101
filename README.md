@@ -41,3 +41,7 @@ export defualt function comp() {
 	)
 }
 ```
+
+#### Metadata and SEO
+- Metadata are always written on server components and layout.tsx
+- Metadata in layout.tsx will be global for that perticular route
